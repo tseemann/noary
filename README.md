@@ -59,6 +59,9 @@ $HOME/noary/bin/noary --help
 ## Dependencies
 
 * `perl` >= 5.26
+* `cd-hit-est` from CD-HIT >= 4.8
+* `blastn` from BLAST+ >= 2.7
+* `mcl` >= 14
 
 ## License
 
