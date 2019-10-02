@@ -19,6 +19,8 @@ sub main {
   },
   {
     outdir => { type=>'dir', desc=>"Output folder" },
+    threads => { type=>'int', default=>1, desc=>"Use this many CPU threads" },
+    features => { type=>'string', default=>'CDS,ncRNA,sRNA,tRNA', desc=>"Features to extract from GFF files" },
     inflation => { type=>'float', default=>0.90, desc=>"Clustering inflation parameter" },
     check => { type=>'bool', default=>0, desc=>"Check dependencies and exit" },
   },
