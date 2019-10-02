@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+use 5.26.0;
+use strict;
+use FindBin;
+use lib "$FindBin::RealBin/../perl5";
+use Biotool::Getopt;
+use Biotool::Logger;
+use Biotool::Binaries;
+use Data::Dumper;
+
+sub main {
+  my $opt = Biotool::Getopt->getopt( 
+  {
+    name => 'noary',
+    version => '0.0.1',
+    desc => 'Bacterial nucleotide sequence clustering',
+    author => 'Torsten Seemann',
+    url => 'https://github.com/tseemann/noary',
+  },
+  {
+    outdir => { type=>'dir', desc=>"Output folder" },
+    inflation => { type=>'float', default=>0.90, desc=>"Clustering inflation parameter" },
+    check => { type=>'bool', default=>0, desc=>"Check dependencies and exit" },
+  },
+  {
+    argv => 'genes.ffn | genome.gff ...',
+    argc_min => 1,
+  },
+  );
+
+  print Dumper($opt);
+
+  require_exe($_) for qw(cd-hit-est mcl blastn makeblastdb);
+  return if $opt->{check};
+}
+
+exit main(@ARGV);
+

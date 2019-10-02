@@ -1,0 +1,22 @@
+language: perl
+
+sudo: false
+
+perl:
+    - "5.26"
+    
+addons:
+    apt:
+        packages:
+            - gzip
+
+install:
+    - "export PATH=$PWD/bin:$PATH"
+
+script:
+    - "noary --version"
+    - "noary --help"
+    - "noary --check dummy"
+    - "noary dummy"
+    - "noary |& grep 'Need at least 1'"
+
