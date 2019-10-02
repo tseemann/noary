@@ -19,8 +19,10 @@ and examination of intergenic regions may lead you to
 
 Noary tries to fill the niche of nucleotide gene/sequence clustering.
 It is intended to be a simple tool for use by other more complex pipelines.
-It was originally conceived at Bath University in 2007 when @harry-thorpe
-was writing Piggy.
+It was originally conceived with 
+[Harry Thorpe](https://github.com/harry-thorpe)
+when I visited
+[University of Bath, UK](https://www.bath.ac.uk/) in 2017.
 
 ## Quick Start
 
